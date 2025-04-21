@@ -104,7 +104,7 @@ export default function Hero() {
 						strokeWidth='2'
 						strokeLinecap='round'
 						strokeLinejoin='round'
-						className='text-purple-400'
+						className='text-yellow-400'
 					>
 						<path d='M12 5v14'></path>
 						<path d='m19 12-7 7-7-7'></path>

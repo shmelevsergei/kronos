@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "/public/logo.jpg";
+import logo from "/public/logo.png";
 
 interface NavItem {
 	name: string;
@@ -84,15 +84,19 @@ export default function Navigation() {
 							onClick={(e) => scrollToSection(e, "#home")}
 							className='flex items-center'
 						>
-							{/* <Image src={logo} alt='Kronos' className='w-10' /> */}
-							<div className='w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center mr-2'>
+							<Image
+								src={logo}
+								alt='Kronos'
+								className='h-12 w-max'
+							/>
+							{/* <div className='w-10 h-10 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center mr-2'>
 								<span className='text-white font-bold text-xl'>
 									K
 								</span>
 							</div>
 							<span className='text-white font-mono font-bold text-xl'>
 								KRONOS
-							</span>
+							</span> */}
 						</Link>
 					</motion.div>
 

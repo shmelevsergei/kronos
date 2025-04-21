@@ -48,11 +48,11 @@ export default function Hero() {
 							}`}
 							style={{
 								background:
-									"linear-gradient(to right, #9333ea, #06b6d4)",
+									"linear-gradient(to right, #ff0000, #ffc45d)",
 								WebkitBackgroundClip: "text",
 								WebkitTextFillColor: "transparent",
 								textShadow: isGlitching
-									? "2px 2px #ff00ea, -2px -2px #00eaff"
+									? "2px 2px #22d3ff, -2px -2px #ff0000"
 									: "none",
 							}}
 						>
@@ -74,7 +74,7 @@ export default function Hero() {
 								scale: 1.05,
 								boxShadow: "0 0 15px rgba(147, 51, 234, 0.5)",
 							}}
-							className='bg-gradient-to-r from-purple-600 to-cyan-500 px-8 py-4 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30'
+							className='bg-gradient-to-r from-red-600 to-yellow-500 px-8 py-4 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30'
 						>
 							Join the Revelation
 						</motion.button>

@@ -1,5 +1,5 @@
-import { Twitter, Github, MessageSquare } from "lucide-react";
 import { RiTelegramLine } from "react-icons/ri";
+import { RiTwitterXFill } from "react-icons/ri";
 
 export default function Footer() {
 	return (
@@ -74,10 +74,13 @@ export default function Footer() {
 							FOLLOW US
 						</h3>
 						<div className='flex space-x-4'>
-							{/* <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
-                <Twitter className="w-6 h-6" />
-                <span className="sr-only">Twitter</span>
-              </a> */}
+							<a
+								href='https://x.com/KronosSynapse'
+								className='text-gray-400 hover:text-blue-400 transition-colors'
+							>
+								<RiTwitterXFill className='w-6 h-6' />
+								<span className='sr-only'>X</span>
+							</a>
 							{/* <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Github className="w-6 h-6" />
                 <span className="sr-only">GitHub</span>
@@ -87,7 +90,7 @@ export default function Footer() {
 								className='text-gray-400 hover:text-blue-400 transition-colors'
 							>
 								<RiTelegramLine className='w-6 h-6' />
-								<span className='sr-only'>Discord</span>
+								<span className='sr-only'>Telegram</span>
 							</a>
 						</div>
 					</div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { JSX } from "react";
 
 interface ImageTextBlockProps {
 	imageUrl: string;
@@ -9,6 +10,7 @@ interface ImageTextBlockProps {
 	title: string;
 	description: string;
 	imageOnLeft?: boolean;
+	list?: JSX.Element;
 }
 
 export default function ImageTextBlock({
@@ -17,6 +19,7 @@ export default function ImageTextBlock({
 	title,
 	description,
 	imageOnLeft = true,
+	list = <></>,
 }: ImageTextBlockProps) {
 	return (
 		<section className='py-20 px-4 md:px-8'>
@@ -56,10 +59,9 @@ export default function ImageTextBlock({
 						<h2 className='text-3xl md:text-4xl font-bold mb-6 font-mono text-blue-400/80'>
 							{title}
 						</h2>
-						<div className='prose prose-invert max-w-none'>
-							<p className='text-gray-300 leading-relaxed'>
-								{description}
-							</p>
+						<div className='prose prose-invert max-w-none text-gray-300 leading-relaxed'>
+							<p className=''>{description}</p>
+							{list}
 						</div>
 					</motion.div>
 				</div>

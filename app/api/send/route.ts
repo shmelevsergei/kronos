@@ -8,8 +8,8 @@ export async function POST(request: Request) {
 		// Настройка транспорта для nodemailer
 		const transporter = nodemailer.createTransport({
 			host: "sm17.hosting.reg.ru",
-			port: 465, // или 587 для STARTTLS
-			secure: true, // true для 465, false для других портов
+			port: 587, // или 587 для STARTTLS
+			secure: false, // true для 465, false для других портов
 			auth: {
 				user: process.env.EMAIL_USER, // email из .env
 				pass: process.env.EMAIL_PASSWORD, // пароль из .env

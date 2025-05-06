@@ -21,14 +21,31 @@ export default function FeedbackForm() {
 		});
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// Form submission logic would go here
-		console.log("Form submitted:", formState);
-		// Reset form
-		setFormState({ name: "", email: "", message: "" });
-		// Show success message
-		alert("Message sent successfully!");
+
+		try {
+			const response = await fetch("/api/send", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formState),
+			});
+
+			const data = await response.json();
+
+			if (data.success) {
+				console.log("Email sent:", formState);
+				setFormState({ name: "", email: "", message: "" });
+				alert("Message sent successfully!");
+			} else {
+				throw new Error(data.message || "Failed to send email");
+			}
+		} catch (error) {
+			console.error("Error:", error);
+			alert("Error sending. Try again later.");
+		}
 	};
 
 	return (

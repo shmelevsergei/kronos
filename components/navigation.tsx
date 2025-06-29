@@ -1,12 +1,11 @@
 "use client";
 
-import type React from "react";
-
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { scrollToSection } from "@/app/shared/handleScroll";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import logo from "/public/logo.png";
 
 interface NavItem {
@@ -39,28 +38,6 @@ export default function Navigation() {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-
-	// Handle smooth scrolling
-	const scrollToSection = (
-		e: React.MouseEvent<HTMLAnchorElement>,
-		href: string
-	) => {
-		e.preventDefault();
-		setIsMobileMenuOpen(false);
-
-		const targetId = href.replace("#", "");
-		const element = document.getElementById(targetId);
-
-		if (element) {
-			element.scrollIntoView({
-				behavior: "smooth",
-				block: "start",
-			});
-
-			// Update URL without page reload
-			window.history.pushState({}, "", href);
-		}
-	};
 
 	return (
 		<header

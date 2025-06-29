@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { scrollToSection } from "@/app/shared/handleScroll";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import bg from "/public/promo.webp";
 
 export default function Hero() {
@@ -76,7 +78,12 @@ export default function Hero() {
 							}}
 							className='bg-gradient-to-r from-red-600 to-yellow-500 px-8 py-4 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30'
 						>
-							Join the Revelation
+							<Link
+								href={"#contact"}
+								onClick={(e) => scrollToSection(e, "#contact")}
+							>
+								Notify me when ready
+							</Link>
 						</motion.button>
 					</motion.div>
 
